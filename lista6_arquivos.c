@@ -1,3 +1,19 @@
+/*
+1. Escreva um programa em C que lê um número n do teclado e gera um arquivo com os n
+primeiros números primos.
+2. Escreva um programa em C que lê um arquivo com números naturais (um número por
+linha) e grava outro arquivo onde cada linha indica se o respectivo número é primo ou não.
+3. Escreva um programa em C que lê um arquivo com números naturais e gera dois arquivos:
+“primos.txt” com aqueles números que são primos e “outros.txt” com aqueles números que não
+são primos.
+4. Escreva um programa em C que lê um arquivo com números reais (um número por linha) e
+grava outro arquivo onde cada linha mostra o valor do respectivo número aplicado a função
+f(x)= x^2 - 5x + 1.
+5. Escreva um programa em C que lê um arquivo com números reais (um número por linha) e
+grava outro arquivo onde cada linha mostra o valor do respectivo número aplicado a função
+f(x)= ax^3 + bx^2 + cx + d, onde a, b, c e d são lidos do teclado.
+*/
+
 #include <stdio.h>
 #include <math.h>
 
