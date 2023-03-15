@@ -29,7 +29,7 @@ int primo (int n) {
 }
 
 float funcaof8 (float x) {
-    return ((x*x)- (5*x) + 1);
+    return ((x*x) - (5*x) + 1);
 }
 
 float funcaof10 (float a, float b, float c, float d, float x) {
@@ -38,7 +38,7 @@ float funcaof10 (float a, float b, float c, float d, float x) {
 int main(){
 
     printf ("Questão 1\n");
-    FILE* f1=fopen("Primos.txt", "w+t");
+    FILE* f1=fopen("lista6_primos.txt", "w+t");
     if(f1==NULL){
         printf("ERRO\n");
         fclose(f1);
@@ -62,13 +62,14 @@ int main(){
 
     fclose(f1);
 
-    FILE* f2=fopen("naturais.txt", "r+t");
+    printf ("Questão 2\n");
+    FILE* f2=fopen("lista6_naturais.txt", "r+t");
     if(f2==NULL){
         printf("ERRO\n");
         fclose(f2);
         return 1;
     }
-    FILE* f3=fopen("eh_primo.txt", "w+t");
+    FILE* f3=fopen("lista6_eh_primo.txt", "w+t");
     if(f3==NULL){
         fclose(f2);
         printf("ERRO\n");
@@ -76,7 +77,6 @@ int main(){
         return 1;
     }
 
-    printf ("Questão 2\n");
     fscanf(f2, "%d", &i);
     while (!feof(f2)){
         fprintf (f3, "%d %d\n", i, primo(i));
@@ -86,27 +86,27 @@ int main(){
     fclose(f3);
 
     printf ("Questão 3\n");
-    FILE* f6=fopen("naturais.txt", "r+t");
-    if(f6==NULL){
-        printf("ERRO\n");
-        fclose(f6);
-        return 1;
-    }
-
-    FILE* f4=fopen("primos.txt", "w+t");
+    FILE* f4=fopen("lista6_primos.txt", "w+t");
     if(f4==NULL){
-        fclose(f6);
         printf("ERRO\n");
         fclose(f4);
         return 1;
     }
 
-    FILE* f5=fopen("outros.txt", "w+t");
+    FILE* f5=fopen("lista6_outros.txt", "w+t");
     if(f5==NULL){
-        fclose(f6);
         fclose(f4);
         printf("ERRO\n");
         fclose(f5);
+        return 1;
+    }
+
+    FILE* f6=fopen("lista6_naturais.txt", "r+t");
+    if(f6==NULL){
+        fclose(f4);
+        fclose(f5);
+        printf("ERRO\n");
+        fclose(f6);
         return 1;
     }
 
@@ -127,13 +127,13 @@ int main(){
     fclose(f6);
 
     printf ("Questão 4\n");
-    FILE* f7=fopen("reais.txt", "r+t");
+    FILE* f7=fopen("lista6_reais.txt", "r+t");
     if(f7==NULL){
         printf("ERRO\n");
         fclose(f7);
         return 1;
     }
-    FILE* f8=fopen("funcaof8.txt", "w+t");
+    FILE* f8=fopen("lista6_funcaof8.txt", "w+t");
     if(f8==NULL){
         fclose(f7);
         printf("ERRO\n");
@@ -153,13 +153,13 @@ int main(){
     fclose(f8);
 
     printf ("Questão 5\n");
-    FILE* f9=fopen("reais.txt", "r+t");
+    FILE* f9=fopen("lista6_reais.txt", "r+t");
     if(f9==NULL){
         printf("ERRO\n");
         fclose(f9);
         return 1;
     }
-    FILE* f10=fopen("funcaof10.txt", "w+t");
+    FILE* f10=fopen("lista6_funcaof10.txt", "w+t");
     if(f10==NULL){
         fclose(f9);
         printf("ERRO\n");

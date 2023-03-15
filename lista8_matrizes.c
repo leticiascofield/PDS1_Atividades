@@ -1,3 +1,26 @@
+/*
+1. Escreva um programa em C que lê de um arquivo o número de linhas, o número de
+colunas e todos os coeficientes de uma matriz.
+2. Escreva uma função que recebe uma matriz quadrada de dimensão n e que retorna a
+média dos elementos armazenados na matriz. O cabeçalho da função deve ser o seguinte:
+float media_matriz(int n, float mat[][100])
+3. Escreva uma função que recebe uma matriz quadrada A de dimensão n e que transforma
+A em uma matriz identidade. O cabeçalho da função deve ser o seguinte:
+void identidade(int n, float A[][100])
+4. Escreva uma função que recebe uma matriz quadrada A de dimensão n e que retorna
+uma matriz T que é a transposta de A. O cabeçalho da função deve ser o seguinte:
+void transposta(int n, float A[][100], float T[][100])
+5. Escreva uma função que testa se uma matriz quadrada A de dimensão n é simétrica. O
+cabeçalho da função deve ser o seguinte:
+bool simetrica(int n, float A[][100])
+6. Escreva uma função que recebe duas matrizes quadradas A e B de dimensão n e que
+retorna uma matriz S que é a soma de A e B. O cabeçalho da função deve ser o seguinte:
+void soma_matriz(int n, float A[][100], float B[][100], float S[][100])
+7. Escreva uma função que recebe duas matrizes quadradas A e B de dimensão n e que
+retorna uma matriz P que é o produto de A e B. O cabeçalho da função deve ser o seguinte:
+void mult_matriz(int n, float A[][100], float B[][100], float P[][100])
+*/
+
 #include <stdio.h>
 #include <stdbool.h>
 
@@ -66,17 +89,18 @@ int main(){
 
     printf("\nQuestao 1\n");
 
-    FILE* f=fopen("matriz.txt", "r+t");
+    FILE* f=fopen("lista8_matriz.txt", "r+t");
     if(f==NULL){
         printf("Erro\n");
+        fclose(f);
         return 1;
     }
 
     int n, m;
     float mat[100][100];
     printf("Tamanho da matriz n x m:\n");
-    fscanf(f, "%d %d", &n, &m); //Pega os dois primeiros numeros do arquivo
-    printf("%d %d\n", n, m);
+    fscanf(f, "%d %d", &n, &m); //Pega os dois primeiros numeros do arquivo como tamanho
+    printf("%d x %d\n", n, m);
 
     printf("Matriz: \n");
     for(int i=0; i<n; i++){ 
@@ -96,7 +120,7 @@ int main(){
     printf("\nQuestao 3\n");
 
     float iden[100][100];
-    identidade(n, iden);
+    identidade(n, iden); //Por ser void tem que chamar a funcao
     printf("Matriz identidade:\n");
     for(int i=0; i<n; i++){ 
         for(int j=0; j<n; j++){
@@ -108,7 +132,7 @@ int main(){
     printf("\nQuestao 4\n");
 
     float transp[100][100];
-    transposta(n, mat, transp); //Por ser void tem que chamar a funcao
+    transposta(n, mat, transp);
     printf("Matriz transposta:\n");
     for(int i=0; i<n; i++){ 
         for(int j=0; j<n; j++){
